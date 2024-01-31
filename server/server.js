@@ -17,3 +17,4 @@ fs.readFile(chirpsFile, (er,data) =>{
     }
     console.log(JSON.parse(data))
 })
+
