@@ -1,13 +1,13 @@
-import axios from "axios";
+const axios = require('axios')
 
 const fs = require('fs')
 const path = require('path')
-const filmFile = path.join(__dirname, `downloads/${films.id}`)
+const filmFile = path.join(__dirname, `downloads/random`)
 
 axios.get('https://api-ghibli.herokuapp.com/films')
     .then((res) => res.json)
-    .then((films) => {
-        fs.writeFile(filmFile, JSON.parse(films.image), (er) => {
+    .then((data) => {
+        fs.writeFile(filmFile, JSON.stringify(data), (er) => {
             if (er) {
                 console.log(er)
             }
